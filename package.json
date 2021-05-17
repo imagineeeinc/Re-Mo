@@ -1,0 +1,74 @@
+{
+  "name": "re-mo",
+  "version": "1.0.0",
+  "description": "a remote mouse service made with web technologies",
+  "main": "application.js",
+  "scripts": {
+    "start": "electron .",
+    "server": "nodemon ./scripts/server-test.js",
+    "rebuild": "cd .\\node_modules\\robotjs && node-gyp rebuild --target=10.1.5 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-win": "electron-builder --win",
+    "dist-win-32": "electron-builder --win --ia32",
+    "dist-mac": "electron-builder --mac",
+    "dist-linux": "electron-builder --linux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagineeeinc/Re-Mo.git"
+  },
+  "keywords": [
+    "notepad"
+  ],
+  "author": "imagineee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imagineeeinc/Re-Mo/issues"
+  },
+  "homepage": "https://github.com/imagineeeinc/Re-Mo",
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "appId": "re-mo",
+    "productName": "Re Mo",
+    "copyright": "Copyright © 2021 Imagineee",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "default",
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "portable",
+        "zip",
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "apk",
+        "zip",
+        "deb",
+        "rpm"
+      ]
+    }
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "robotjs": "^0.6.0"
+  },
+  "extra-notes": [
+    "npm i -g felixrieseberg/windows-build-tools to install with altest version of python",
+    "npm rebuild --runtime=electron --target=1.1.3 --disturl=https://atom.io/download/atom-shell --abi=72 for rebuild from official robotjs",
+    "https://github.com/octalmage/robotjs/issues/594 to build"
+  ]
+}

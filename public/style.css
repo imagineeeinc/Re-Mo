@@ -1,0 +1,14 @@
+:root {
+    font-family: plex-mono-light,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18pt;
+    font-weight: 400;
+}
+body {
+    margin: 0px;
+    padding: 5px;
+}
+#trackpad {
+    background: snow;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+}
