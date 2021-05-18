@@ -4,6 +4,10 @@ const { BrowserWindow } = require('electron')
 const { ipcMain } = require('electron')
 const path = require("path")
 
+require('electron-reload')(__dirname, {
+  electron: require('electron')
+})
+
 const mouseMover = require("./scripts/mouse-mover")
 const server = require("./scripts/server")
 
@@ -72,7 +76,7 @@ function createTray() {
   appIcon.on('double-click', function (event) {
       mainWindow.show();
   });
-  appIcon.setToolTip('Question Mark');
+  appIcon.setToolTip('Re Mo');
   appIcon.setContextMenu(contextMenu);
   return appIcon;
 }
@@ -91,6 +95,9 @@ app.whenReady().then(() => {
   }
   mainWindow = createWindow()
   server.startServer()
+  server.onMove((pos) => {
+    mouseMover.move(pos)
+  })
   createTray()
 })
 /*

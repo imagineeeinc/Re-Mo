@@ -1,9 +1,14 @@
 const robot = require("robotjs")
-var mouse = robot.getMousePos();
 
 //Move the mouse down by 500 pixels.
 //robot.moveMouse(mouse.x,mouse.y-500);
-robot.mouseClick();
-
-module.exports = {
+//robot.mouseClick();
+function moveMouse(pos) {
+    let mouse = robot.getMousePos()
+    robot.moveMouse(mouse.x+pos.x/4,mouse.y+pos.y/4)
+    if (mouse.click) {
+        robot.mouseClick()
+    }
 }
+
+module.exports.move = moveMouse
