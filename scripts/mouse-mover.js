@@ -5,9 +5,11 @@ const robot = require("robotjs")
 //robot.mouseClick();
 function moveMouse(pos) {
     let mouse = robot.getMousePos()
-    robot.moveMouse(mouse.x+pos.x/4,mouse.y+pos.y/4)
-    if (mouse.click) {
-        robot.mouseClick()
+    robot.moveMouse(mouse.x+pos.x*4,mouse.y+pos.y*4)
+    if (pos.click) {
+        if (pos.click === true) {
+            robot.mouseClick()
+        }
     }
 }
 

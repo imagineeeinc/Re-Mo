@@ -26,8 +26,8 @@ function startServer() {
         socket.on('move mouse', (pos) => {
             moveCall(pos)
         })
-        socket.on('click', (pos) => {
-            pos.click = true
+        socket.on('click', () => {
+            let pos = {x:0, y:0, click: true}
             moveCall(pos)
         })
         socket.on('disconnect', () => {
