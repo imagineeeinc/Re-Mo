@@ -30,6 +30,13 @@ function startServer() {
             let pos = {x:0, y:0, click: true}
             moveCall(pos)
         })
+        socket.on('right click', () => {
+            let pos = {x:0, y:0, click: "right-click"}
+            moveCall(pos)
+        })
+        socket.on('print', (txt) => {
+            console.log(txt)
+        })
         socket.on('disconnect', () => {
             console.log('user disconnected from portal');
         });

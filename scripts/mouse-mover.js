@@ -5,10 +5,16 @@ const robot = require("robotjs")
 //robot.mouseClick();
 function moveMouse(pos) {
     let mouse = robot.getMousePos()
-    robot.moveMouse(mouse.x+pos.x*4,mouse.y+pos.y*4)
+    if (pos.x < 2 && pos.y < 2) {
+        robot.moveMouse(mouse.x+pos.x*2,mouse.y+pos.y*2)
+    } else {
+        robot.moveMouse(mouse.x+pos.x*4,mouse.y+pos.y*4)
+    }
     if (pos.click) {
         if (pos.click === true) {
             robot.mouseClick()
+        } else if (pos.click === "right-click") {
+            robot.mouseClick("right")
         }
     }
 }

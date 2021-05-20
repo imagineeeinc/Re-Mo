@@ -13,7 +13,7 @@ const server = require("./scripts/server")
 
 var mainWindow
 var autoLaunch
-let firstClose = true
+let firstClose = false
 
 function createWindow () {
   const win = new BrowserWindow({
