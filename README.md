@@ -1,2 +1,2 @@
 # Re-Mo
-a remote mouse seevice made with web technologies
+a remote mouse service made with web technologies
