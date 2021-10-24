@@ -1,2 +1,2 @@
 # Re-Mo
-a remote mouse service made with web technologies
+> A remote mouse application you can accses from your browser from mobile and other device (probably touchscreen devices)
